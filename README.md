@@ -173,6 +173,8 @@ Para ejecutar el programa hay que abrir el archivo autonama_binario.pl en prolog
 
 - Suponiendo que la lista de bits tiene longitud n, haremos n llamadas recursivas a `aux_automata/2`.
 
-- Cada llamada a `move/3` es una búsqueda en los hechos definidos en `datos.pl`. Como `move/3` está “indexado” por el primer argumento (estado actual) y luego el tercer argumento (símbolo), Prolog lo resuelve en tiempo aproximado O(1) o O(k) donde k es constante (número de hechos por estado).
+- Cada llamada a `move/3` es una búsqueda en los hechos definidos. Como `move/3` está “indexado” por el primer argumento (estado actual) y luego el tercer argumento (símbolo), Prolog lo resuelve en tiempo aproximado O(1) o O(k) donde k es constante (número de hechos por estado).
 
 - Por tanto, en total, la complejidad es **O(n)** en el número de símbolos de la cadena.
+
+
