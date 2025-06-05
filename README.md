@@ -133,4 +133,15 @@ Imaginemos que “s0”, “s1” y “s2” representan el resto actual (módul
 
 - **s2** equivale a “resto 2”
 
-La fórmula general para actualizar el resto cuando añado un bit `b ∈ {0,1`}` a la derecha de un número que ya tenía resto r es:
+En resumen:
+
+- move/3 define la tabla de transición del AFD, basada en cómo se calcula el resto módulo 3 al añadir un bit.
+
+- final/1 declara qué estado(es) son de aceptación (en este caso, solo s0).
+
+- automata/1 es la puerta de entrada: toma una lista de bits y arranca la simulación en el estado inicial s0.
+
+- aux_automata/2 hace el recorrido recursivo:
+  
+  1. Si la lista está vacía, revisa si el estado actual es final (acepta o rechaza).
+  2. Si quedan símbolos, consume el primero, usa move/3 para pasar al siguiente estado y llama recursivamente con el resto de la lista.
