@@ -60,5 +60,59 @@ Desde S1, con 0 pasamos a S2; con 1 volvemos a S0.
 
 Desde S2, con 0 vamos a S1; con 1 permanecemos en S2. 
 
+# Implementacióm
+```
+% -------------------------------
+% AFD: Verificar si un número binario es divisible por 3
+% Pega este bloque completo en https://swish.swi-prolog.org/ para probarlo.
+% -------------------------------
 
+% Hechos move(CurrentState, NextState, Symbol):
+%   representan las transiciones del DFA que calcula residuo mod 3.
+move(s0, s0, '0').   % (2*0 + 0) mod 3 = 0  → sigue en s0
+move(s0, s1, '1').   % (2*0 + 1) mod 3 = 1  → pasa a s1
 
+move(s1, s2, '0').   % (2*1 + 0) mod 3 = 2  → pasa a s2
+move(s1, s0, '1').   % (2*1 + 1) mod 3 = 0  → pasa a s0
+
+move(s2, s1, '0').   % (2*2 + 0) mod 3 = 1  → pasa a s1
+move(s2, s2, '1').   % (2*2 + 1) mod 3 = 2  → sigue en s2
+
+% Sólo el estado s0 (residuo = 0) es final/aceptación.
+final(s0).
+
+% Predicado principal:
+%   automata(ListaDeSimbolosBinarios)
+%   → Si la lista contiene sólo '0' y '1', simula el DFA y muestra si es divisible.
+automata(Lista) :-
+    aux_automata(Lista, s0).
+
+% Caso base: cadena vacía y EstadoActual es final → aceptamos
+aux_automata([], EstadoActual) :-
+    final(EstadoActual),
+    writeln('La cadena BINARIA es divisible por 3.').
+
+% Caso base inverso: cadena vacía y EstadoActual no es final → rechazamos
+aux_automata([], EstadoActual) :-
+    \+ final(EstadoActual),
+    writeln('La cadena BINARIA NO es divisible por 3.'), !, fail.
+
+% Caso recursivo: consumimos el primer símbolo y aplicamos move/3
+aux_automata([Simbolo | Resto], EstadoActual) :-
+    move(EstadoActual, EstadoSiguiente, Simbolo),
+    aux_automata(Resto, EstadoSiguiente).
+
+% -------------------------------
+% Ejemplos de consulta (pégalas en el recuadro de Query de SWISH):
+%
+% ?- automata(['0']).            % 0 en binario → divisible
+% ?- automata(['1','1']).        % 3 en binario → divisible
+% ?- automata(['1','0']).        % 2 en binario → NO divisible
+% ?- automata(['1','1','0']).    % 6 en binario → divisible
+% ?- automata(['1','0','0','1']).% 9 en binario → divisible
+% ?- automata(['1','0','0']).    % 4 en binario → NO divisible
+% ?- automata(['1','1','1','0','1','1']).  % 59 en binario → NO divisible
+% ?- automata(['1','0','1','1','0']).      % 22 en binario → NO divisible
+% ?- automata([]).               % cadena vacía → divisible (interpreta 0)
+% -------------------------------
+```
