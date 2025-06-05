@@ -132,3 +132,5 @@ Imaginemos que “s0”, “s1” y “s2” representan el resto actual (módul
 - **s1** equivale a “resto 1”
 
 - **s2** equivale a “resto 2”
+
+La fórmula general para actualizar el resto cuando añado un bit `b ∈ {0,1`}` a la derecha de un número que ya tenía resto r es:
