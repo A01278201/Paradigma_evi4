@@ -60,7 +60,7 @@ Desde S1, con 0 pasamos a S2; con 1 volvemos a S0.
 
 Desde S2, con 0 vamos a S1; con 1 permanecemos en S2. 
 
-# Implementacióm
+# Implementación
 ```
 % Hechos move(CurrentState, NextState, Symbol):
 %   representan las transiciones del DFA que calcula residuo mod 3.
@@ -145,4 +145,15 @@ Este programa es un ejemplo clásico de cómo, en Prolog, se puede implementar d
 
 # PRUEBAS
 
+Para ejecutar el programa hay que abrir el archivo autonama_binario.pl en prolog o copiar el codigo en otra terminal de prolog.
+
+**Pruebas Exitosas**:
+
+1. 100 (4)
+2. 1111 (15)
+3. 11100 (28)
+4. 11110 (30)
+5. 1000010 (66)
+
+   
 
