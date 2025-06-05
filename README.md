@@ -49,6 +49,9 @@ A continuación se muestra el diagrama del autómata con sus transiciones y esta
 
 Explicación del diagrama
 
+![automata binarios](https://github.com/user-attachments/assets/8740fbf1-d9bd-4394-bb35-fdc3f4f3cd3b)
+
+
 El círculo S0 (residuo 0) es doble porque es el estado final.
 
 Desde S0, con 0 volvemos a S0; con 1 vamos a S1.
