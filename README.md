@@ -27,6 +27,7 @@ Definimos 3 estados:
 - S2: residuo = 2
 
 **Estado inicial**: S0 (antes de leer ningún bit, el residuo de “cadena vacía” = 0).
+
 **Estado(es) final(es)**: S0 (solo si al terminar, residuo = 0, aceptamos que es divisible por 3).
 
 Las transiciones según el bit leído (0 o 1) quedan definidas por:
@@ -55,4 +56,6 @@ Desde S0, con 0 volvemos a S0; con 1 vamos a S1.
 Desde S1, con 0 pasamos a S2; con 1 volvemos a S0.
 
 Desde S2, con 0 vamos a S1; con 1 permanecemos en S2. 
+
+
 
