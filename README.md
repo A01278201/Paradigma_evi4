@@ -149,11 +149,19 @@ Para ejecutar el programa hay que abrir el archivo autonama_binario.pl en prolog
 
 **Pruebas Exitosas**:
 
-1. 100 (4)
 2. 1111 (15)
-3. 11100 (28)
 4. 11110 (30)
 5. 1000010 (66)
 
+![prueba_exitosa](https://github.com/user-attachments/assets/13cd8edf-e09c-4787-aeb5-dd04d21ff870)
+
+
+**Pruebas No Exitosas**:
+
+1. 100 (4)
+2. 1011 (11)
+3. 111011 (59) 
    
+![prueba_error](https://github.com/user-attachments/assets/e6c0f4a1-12c1-45b7-a159-75e24f24d290)
+
 
