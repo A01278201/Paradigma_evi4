@@ -62,11 +62,6 @@ Desde S2, con 0 vamos a S1; con 1 permanecemos en S2.
 
 # Implementacióm
 ```
-% -------------------------------
-% AFD: Verificar si un número binario es divisible por 3
-% Pega este bloque completo en https://swish.swi-prolog.org/ para probarlo.
-% -------------------------------
-
 % Hechos move(CurrentState, NextState, Symbol):
 %   representan las transiciones del DFA que calcula residuo mod 3.
 move(s0, s0, '0').   % (2*0 + 0) mod 3 = 0  → sigue en s0
@@ -145,3 +140,9 @@ En resumen:
   
   1. Si la lista está vacía, revisa si el estado actual es final (acepta o rechaza).
   2. Si quedan símbolos, consume el primero, usa move/3 para pasar al siguiente estado y llama recursivamente con el resto de la lista.
+
+Este programa es un ejemplo clásico de cómo, en Prolog, se puede implementar de forma muy sencilla un proyecto de teoría de autómatas: en pocas líneas describimos la lógica de un DFA, y Prolog se encarga automáticamente de recorrer la lista de entrada y aplicar “backtracking” o “fallo” cuando no existe transición válida.
+
+# PRUEBAS
+
+
