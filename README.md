@@ -124,3 +124,11 @@ Estos seis hechos (`move/3`) definen la función de transición del autómata. C
 - **Símbolo**: el carácter que el autómata lee (en este caso, `'0'` o `'1'`).
 
 - **EstadoSiguiente**: a qué nuevo estado salta el autómata después de procesar ese símbolo.
+
+Imaginemos que “s0”, “s1” y “s2” representan el resto actual (módulo 3) que llevamos al interpretar la parte de la cadena ya leída. En efecto:
+
+- **s0** equivale a “resto 0”
+
+- **s1** equivale a “resto 1”
+
+- **s2** equivale a “resto 2”
