@@ -116,3 +116,11 @@ aux_automata([Simbolo | Resto], EstadoActual) :-
 % ?- automata([]).               % cadena vacía → divisible (interpreta 0)
 % -------------------------------
 ```
+
+Estos seis hechos (`move/3`) definen la función de transición del autómata. Cada cláusula `move(EstadoActual, EstadoSiguiente, Símbolo)` indica:
+
+- **EstadoActual**: el estado en el que se encuentra el automáta antes de leer el próximo bit.
+
+- **Símbolo**: el carácter que el autómata lee (en este caso, `'0'` o `'1'`).
+
+- **EstadoSiguiente**: a qué nuevo estado salta el autómata después de procesar ese símbolo.
