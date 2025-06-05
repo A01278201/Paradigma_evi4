@@ -178,3 +178,46 @@ Para ejecutar el programa hay que abrir el archivo autonama_binario.pl en prolog
 - Por tanto, en total, la complejidad es **O(n)** en el número de símbolos de la cadena.
 
 
+**Complejidad espacial**
+
+- El único “overhead” es la recursión en la pila de Prolog de profundidad máxima n, más el espacio necesario para almacenar la lista de bits.
+  
+- Espacio auxiliar de la pila: O(n).
+
+
+# Alternativa con otro paradigma: Imperativo (Python)
+
+Para comparar, veamos cómo se resolvería el mismo problema “¿un binario es divisible por 3?” con un enfoque imperativo en Python, usando una función que recorre la cadena y mantiene el residuo:
+
+```
+def es_divisible_por_3(binario: str) -> bool:
+    """
+    Recibe una cadena de caracteres '0' y '1'.
+    Devuelve True si el número binario es divisible por 3, False en otro caso.
+    """
+
+    residuo = 0
+    for caracter in binario:
+        # Convertimos el caracter a entero (0 o 1)
+        bit = int(caracter)
+        # Nuevo residuo = (2 * residuo + bit) mod 3
+        residuo = (2 * residuo + bit) % 3
+
+    # Si al final residuo es 0, es divisible
+    return (residuo == 0)
+
+
+if __name__ == "__main__":
+    pruebas = ["0", "11", "10", "110", "1001", "100", "111011", "10110"]
+    for b in pruebas:
+        print(f"{b} →", "Divisible" if es_divisible_por_3(b) else "NO divisible")
+```
+
+- Recorremos cada caracter de la cadena una sola vez: n iteraciones.
+
+- Cada iteración realiza una operación aritmética y una asignación: O(1).
+
+- En total: O(n).
+
+No hay recursión ni búsquedas extra; tan solo se guarda un entero residuo que evoluciona. Espacialmente, solo se reserva O(1) para la variable residuo además del espacio para la cadena de entrada.
+
