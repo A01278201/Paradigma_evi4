@@ -230,3 +230,21 @@ No hay recursión ni búsquedas extra; tan solo se guarda un entero residuo que 
 | **Escalabilidad (cadenas muy largas)** | Buena, salvo profundidad de recursión en Prolog (n estados en la pila)    | Excelente, sin límite de recursión (iteración)                             |
 | **Detección de errores de alfabeto**   | Si aparece un símbolo distinto de ‘0’ o ‘1’, Prolog falla automáticamente | En Python hay que validar explícitamente el input (o capturar excepciones) |
 
+
+# Conclusión
+
+Después de esta ultima entrega, llego a la conclusión de que cuando se trata de prototipar rápidamente un reconocimiento formal mediante un DFA, Prolog resulta realmente práctico. En cuestión de minutos puedo definir las transiciones y los estados finales con apenas unas líneas de código, sin preocuparme por bucles ni manejar variables de estado. Esto me permite centrarme en la lógica del autómata en lugar de en la sintaxis del lenguaje, lo que agiliza mucho el desarrollo de pruebas conceptuales y ejemplos sencillos.
+
+Sin embargo, si se piensa en llevar ese mismo reconocimiento a un entorno de producción, especialmente cuando las cadenas de entrada pueden ser muy largas, un enfoque imperativo como el de Python me parece más efectivo. Con Python se puede procesar cada bit en un bucle iterativo y mantener un único valor de “residuo” sin necesidad de usar recursión. De esa forma de trabajar se evita el consumo de pila que existiría en Prolog con llamadas recursivas para cada símbolo, y además se integra de forma natural con otras bibliotecas o módulos que muy probablemente pueda usar en un proyecto real.
+
+En ambos casos el tiempo de ejecución crece linealmente con la longitud de la cadena (O(n)), pero la diferencia clave está en el espacio: la implementación en Python solo utiliza O(1) de memoria adicional para el residuo, mientras que Prolog reserva O(n) en la pila para cada llamada recursiva. Por eso, para exploraciones rápidas y ejemplos teóricos, Prolog es ideal; en cambio, para manejar volúmenes grandes de datos o incluir la función dentro de una aplicación más compleja, Python (u otro lenguaje imperativo) es, en mi experiencia, la opción más eficiente y fácil de integrar.
+
+# REFERENCIAS
+
+Hopcroft, J. E., Motwani, R., & Ullman, J. D. (2006). Introduction to Automata Theory, Languages, and Computation (3ª ed.). Pearson Education.
+Sipser, M. (2013). Introduction to the Theory of Computation (3ª ed.). Cengage Learning.
+Sterling, L., & Shapiro, E. (1994). The Art of Prolog: Advanced Programming Techniques (2ª ed.). MIT Press.
+SWI-Prolog Development Team. (2021). SWI-Prolog Reference Manual. Retrieved from https://www.swi-prolog.org/pldoc/man?section=manual
+Lutz, M. (2013). Learning Python (5ª ed.). O’Reilly Media.
+Ullman, J. D., & Aho, A. V. (2003). Foundations of Computer Science. Pearson.
+
