@@ -230,6 +230,5 @@ No hay recursión ni búsquedas extra; tan solo se guarda un entero residuo que 
 | **Facilidad de prototipado**           | Muy rápida: basta definir transiciones                                    | Rápida, pero se escribe lógica detallada                                   |
 | **Escalabilidad (cadenas muy largas)** | Buena, salvo profundidad de recursión en Prolog (n estados en la pila)    | Excelente, sin límite de recursión (iteración)                             |
 | **Legibilidad del código**             | Alta si se domina Prolog/AFD                                              | Alta para quien domina Python                                              |
-| **Reutilización/Extensión**            | Fácil extender a otros DFA cambiando hechos                               | Fácil, pero se debe modificar lógica de cálculo                            |
 | **Detección de errores de alfabeto**   | Si aparece un símbolo distinto de ‘0’ o ‘1’, Prolog falla automáticamente | En Python hay que validar explícitamente el input (o capturar excepciones) |
 
