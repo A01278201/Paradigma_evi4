@@ -17,7 +17,7 @@ Definiremos hechos `move/3` que representan las transiciones de estados del AFD,
 Para decidir si un número binario b<sub>n−1</sub>…b<sub>1</sub>b<sub>0</sub> (cada b<sub>i</sub> ∈ {0,1}) es divisible por 3, basta con leer los bits de izquierda a derecha y calcular el residuo módulo 3 que va cambiando. Si al final el residuo es 0, es divisible.
 
 - Cada vez que “vimos” un bit x en el número actual con residuo r, el nuevo residuo será (2·r + x) mod 3 (porque al desplazar a la izquierda en binario, el valor anterior se multiplica por 2, y luego sumamos el bit x).
-- 
+
 Definimos 3 estados:
 
 - S0: residuo = 0
