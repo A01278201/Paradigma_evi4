@@ -241,10 +241,10 @@ En ambos casos el tiempo de ejecución crece linealmente con la longitud de la c
 
 # REFERENCIAS
 
-Hopcroft, J. E., Motwani, R., & Ullman, J. D. (2006). Introduction to Automata Theory, Languages, and Computation (3ª ed.). Pearson Education.
-Sipser, M. (2013). Introduction to the Theory of Computation (3ª ed.). Cengage Learning.
-Sterling, L., & Shapiro, E. (1994). The Art of Prolog: Advanced Programming Techniques (2ª ed.). MIT Press.
-SWI-Prolog Development Team. (2021). SWI-Prolog Reference Manual. Retrieved from https://www.swi-prolog.org/pldoc/man?section=manual
-Lutz, M. (2013). Learning Python (5ª ed.). O’Reilly Media.
-Ullman, J. D., & Aho, A. V. (2003). Foundations of Computer Science. Pearson.
+- Hopcroft, J. E., Motwani, R., & Ullman, J. D. (2006). Introduction to Automata Theory, Languages, and Computation (3ª ed.). Pearson Education.
+- Sipser, M. (2013). Introduction to the Theory of Computation (3ª ed.). Cengage Learning.
+- Sterling, L., & Shapiro, E. (1994). The Art of Prolog: Advanced Programming Techniques (2ª ed.). MIT Press.
+- SWI-Prolog Development Team. (2021). SWI-Prolog Reference Manual. Retrieved from https://www.swi-prolog.org/pldoc/man?section=manual
+- Lutz, M. (2013). Learning Python (5ª ed.). O’Reilly Media.
+- Ullman, J. D., & Aho, A. V. (2003). Foundations of Computer Science. Pearson.
 
