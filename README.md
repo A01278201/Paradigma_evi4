@@ -32,7 +32,7 @@ Definimos 3 estados:
 
 Las transiciones según el bit leído (0 o 1) quedan definidas por:
 ```
-    Estado actual  |  Bit leído  |  Nuevo estado  |  Cálculo del residuo
+   Estado actual  |  Bit leído  |  Nuevo estado  |  Cálculo del residuo
    ---------------|-------------|----------------|--------------------------------
       S0 (r=0)    |     0       |     S0 (r=0)   |  (2·0 + 0) mod 3 = 0  
       S0 (r=0)    |     1       |     S1 (r=1)   |  (2·0 + 1) mod 3 = 1  
