@@ -98,7 +98,7 @@ aux_automata([Simbolo | Resto], EstadoActual) :-
     aux_automata(Resto, EstadoSiguiente).
 
 % -------------------------------
-% Ejemplos de consulta (pégalas en el recuadro de Query de SWISH):
+% Ejemplos de consulta:
 %
 % ?- automata(['0']).            % 0 en binario → divisible
 % ?- automata(['1','1']).        % 3 en binario → divisible
